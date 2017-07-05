@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MdToolbarModule } from '@angular/material';
-
+import { ResponsiveModule } from 'ng2-responsive';
 @Component({
   selector: 'fs-toolbar',
   templateUrl: './toolbar.component.html',

@@ -1,9 +1,18 @@
 <md-toolbar color="primary">
   <span>
-    <md-icon class="icon-20">pets</md-icon>
-    LeashedIn
+    <!--<md-icon class="icon-20">pets</md-icon>-->
+    FS
   </span>
-  <button md-icon-button [md-menu-trigger-for]="menu">
+  <div class="fill-space"></div>
+  <button md-button *showItBootstrap="['sm','md','lg','xl']">Testimonials</button>
+  <button md-button *showItBootstrap="['sm','md','lg','xl']">FAQ</button>
+  <button md-button *showItBootstrap="['sm','md','lg','xl']">Contact</button>
+  <button md-button *showItBootstrap="['sm','md','lg','xl']">Buy</button>
+
+  <button md-fab class="phone-menu"><md-icon>shopping cart</md-icon></button>
+
+  <!-- *ngIf="phone" -->
+  <!--<button md-icon-button [md-menu-trigger-for]="menu">
     <md-icon>more_vert</md-icon>
-  </button>
+  </button>-->
 </md-toolbar>

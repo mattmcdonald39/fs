@@ -1,0 +1,9 @@
+.fill-space {
+    flex: 1 1 auto;
+}
+
+.phone-menu {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+}
