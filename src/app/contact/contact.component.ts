@@ -13,14 +13,19 @@ export class ContactComponent implements OnInit {
   email: string;
   comment: string;
   constructor(public emailSvc: EmailService) {
+
    }
 
   ngOnInit() {
   }
   submit(e) {
-    debugger;
     e.preventDefault();
-    this.emailSvc.sendEmail();
+    let content = {
+      name: this.name,
+      email: this.email,
+      comment: this.comment
+    }
+    this.emailSvc.sendEmail(content);
   };
 
   onKey(event, name) {
