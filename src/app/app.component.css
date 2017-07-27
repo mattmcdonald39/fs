@@ -1,0 +1,22 @@
+body {
+    margin: 0px !important;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.page-flexbox-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+
+  main {
+    flex: 1 0 auto;
+  }
+
+.fsLogo {
+    height: 50px;
+    margin-top: 5px;
+}
