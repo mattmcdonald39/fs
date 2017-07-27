@@ -2,7 +2,7 @@
   <div class="row">
     <p class="flow-text">Thank you for reaching out to us. Question, comment or interested in doing business with us? Either way we can't wait to hear from you. Please fill out the form and we will respond to you as quickly as possible.</p>
   </div>
-  <form class="col s12" (submit)="submit($event)" #commentForm="ngForm">
+  <form class="col s12" (submit)="submit($event)" >
     <div class="row">
       <div class="input-field col s12">
         <input (keyup)="onKey($event, 'name')" id="first_name" type="text" class="validate">

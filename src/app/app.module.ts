@@ -6,6 +6,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 import 'hammerjs';
 
+import { EmailService } from './services/email.service';
+
 import { AppComponent } from './app.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
@@ -34,7 +36,7 @@ const appRoutes: Routes = [
       { enableTracing: true } // <-- debugging purposes only
     )
   ],
-  providers: [],
+  providers: [EmailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
