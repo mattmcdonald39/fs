@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-const nodemailer = require('nodemailer');
+// const nodemailer = require('nodemailer');
 
 @Injectable()
 export class EmailService {
