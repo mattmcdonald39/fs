@@ -10,7 +10,6 @@ const api = require('./src/server/routes/api');
 
 const app = express();
 
-
 var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -18,10 +17,6 @@ var transporter = nodemailer.createTransport({
     pass: 'garvinujujik399'
   }
 });
-
-
-
-
 
 // Parsers for POST data
 app.use(bodyParser.json());
@@ -45,11 +40,14 @@ app.post('/api/sendmail', function(req, res) {
   res.setHeader('Access-Control-Allow-Methods', 'POST');
   res.setHeader('Access-Control-Allow-Headers', '*');
 
+  let message = `From: ${req.body.email}
+${req.body.reason}: ${req.body.comment}`;
+
   var mailOptions = {
     from: 'The Face Shade <no-reply@thefaceshade.com>',
-    to: 'matthew.mcdonald@drivetime.com',
-    subject: 'Reason - ' + req.body.name,
-    text: 'Message: ' + req.body.comment + '. email: ' + req.body.email
+    to: 'mmcdonald39@gmail.com',
+    subject: req.body.reason[0].toUpperCase() + req.body.reason.slice(1, req.body.reason.length) + ' - ' + req.body.name,
+    text: message
   };
 
   console.log('server.js');

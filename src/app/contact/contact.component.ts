@@ -14,6 +14,7 @@ export class ContactComponent implements OnInit {
   email: string;
   comment: string;
   reason: string = "question";
+  sending: boolean = false;
   constructor(public emailSvc: EmailService) {
 
    }
@@ -26,13 +27,16 @@ export class ContactComponent implements OnInit {
   }
 
   submit(e) {
+    this.sending = true;
     e.preventDefault();
     let content = {
       name: this.name,
       email: this.email,
-      comment: this.comment
+      comment: this.comment,
+      reason: this.reason
     }
-    this.emailSvc.sendEmail(content);
+    let response = this.emailSvc.sendEmail(content);
+    console.log(response);
   };
 
   onKey(event, name) {

@@ -1,19 +1,31 @@
 <div class="row" style="padding: 50px">
   <div class="col s12 m8 offset-m2 l6 offset-l3">
     <div class="row">
-      <p class="flow-text">Thank you for reaching out to us. Question, comment or interested in doing business with us? Either way we can't wait to hear from you. Please fill out the form and we will respond to you as quickly as possible.</p>
+      <p class="flow-text">Question, comment or interested in doing business with us? Either way we can't wait to hear from you. Please fill out the form and we will respond to you as quickly as possible.</p>
     </div>
-    {{reason}}
-    <form class="col s12" (submit)="submit($event)" >
+    <div class="row" *ngIf="sending">
+      <div class="col s12">
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">
+              Thank you!
+            </span>
+            <p>
+              We appreciate you taking the time to contact us. We have recieved your message and will respond to you by email as soon as possible.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <form class="col s12" (submit)="submit($event)" *ngIf="!sending">
       <div class="row">
         <div class="input-field col s12">
-          <select class="form-control" #t (change)="onKey($event, 'reason')">
-            <option [value]="question">Question</option>
-            <option [value]="comment">Comment</option>
-            <option [value]="complaint">Complaint</option>
-            <option [value]="wholesale">Wholesale</option>
-          </select>
-          <label>Reason for Contact</label>
+          <md-select placeholder="Contact Reason" name="reason" [(ngModel)]="reason">
+            <md-option [value]="'question'">Question</md-option>
+            <md-option [value]="'comment'">Comment</md-option>
+            <md-option [value]="'complaint'">Complaint</md-option>
+            <md-option [value]="'wholesale'">Wholesale</md-option>
+          </md-select>
         </div>
       </div>
       <div class="row">

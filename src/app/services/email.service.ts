@@ -8,8 +8,8 @@ export class EmailService {
         this.headers = new Headers();
         this.headers.append('Content-Type', 'application/json');   
     }
-  // make this a service
+
   sendEmail(content) {
-    this.http.post('/api/sendmail', content, {headers: this.headers}).map( res => res.json()).subscribe();
+    return this.http.post('/api/sendmail', content, {headers: this.headers}).map( res => res.json()).subscribe();
   }
 }
