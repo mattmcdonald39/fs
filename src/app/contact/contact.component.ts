@@ -1,5 +1,6 @@
 import { Component, OnInit, Injectable } from '@angular/core';
 import { MdToolbarModule } from '@angular/material';
+import { FormControl, FormGroup} from '@angular/forms';
 import { EmailService } from '../services/email.service';
 
 @Component({
@@ -12,12 +13,18 @@ export class ContactComponent implements OnInit {
   name: string;
   email: string;
   comment: string;
+  reason: string = "question";
   constructor(public emailSvc: EmailService) {
 
    }
 
   ngOnInit() {
   }
+
+  onChange(value){
+    this.reason = value;
+  }
+
   submit(e) {
     e.preventDefault();
     let content = {
@@ -39,6 +46,8 @@ export class ContactComponent implements OnInit {
         case 'comment':
             this.comment = event.target.value
             break;
+        case 'reason':
+            this.reason = event.target.value
         default:
             break;
     }

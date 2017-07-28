@@ -19,12 +19,7 @@ var transporter = nodemailer.createTransport({
   }
 });
 
-var mailOptions = {
-  from: 'The Face Shade <no-reply@thefaceshade.com>',
-  to: 'matthew.mcdonald@drivetime.com',
-  subject: 'Contact us email',
-  text: 'test'
-};
+
 
 
 
@@ -49,6 +44,13 @@ app.post('/api/sendmail', function(req, res) {
   res.setHeader('Access-Control-Request-Method', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST');
   res.setHeader('Access-Control-Allow-Headers', '*');
+
+  var mailOptions = {
+    from: 'The Face Shade <no-reply@thefaceshade.com>',
+    to: 'matthew.mcdonald@drivetime.com',
+    subject: 'Reason - ' + req.body.name,
+    text: 'Message: ' + req.body.comment + '. email: ' + req.body.email
+  };
 
   console.log('server.js');
   transporter.sendMail(mailOptions, function(error, info){
