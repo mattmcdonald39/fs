@@ -45,7 +45,7 @@ ${req.body.reason}: ${req.body.comment}`;
 
   var mailOptions = {
     from: 'The Face Shade <no-reply@thefaceshade.com>',
-    to: 'mmcdonald39@gmail.com',
+    to: 'mmcdonald39@gmail.com, mollymmcdonald@aol.com',
     subject: req.body.reason[0].toUpperCase() + req.body.reason.slice(1, req.body.reason.length) + ' - ' + req.body.name,
     text: message
   };
