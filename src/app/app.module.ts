@@ -20,7 +20,8 @@ const appRoutes: Routes = [
     pathMatch: 'full'
   },  
   { path: 'home', component: HomeComponent },
-  { path: 'contact', component: ContactComponent }
+  { path: 'contact', component: ContactComponent },
+  { path: '**', redirectTo: '/home' }
 ];
 
 @NgModule({
