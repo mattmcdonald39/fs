@@ -10,6 +10,6 @@ export class EmailService {
     }
 
   sendEmail(content) {
-    return this.http.post('/api/sendmail', content, {headers: this.headers}).map( res => res.json()).subscribe();
+    // return this.http.post('/api/sendmail', content, {headers: this.headers}).map( res => res.json()).subscribe();
   }
 }

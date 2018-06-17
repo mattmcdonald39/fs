@@ -20,12 +20,14 @@
     <form class="col s12" (submit)="submit($event)" *ngIf="!sending">
       <div class="row">
         <div class="input-field col s12">
-          <md-select placeholder="Contact Reason" name="reason" [(ngModel)]="reason">
-            <md-option [value]="'question'">Question</md-option>
-            <md-option [value]="'comment'">Comment</md-option>
-            <md-option [value]="'complaint'">Complaint</md-option>
-            <md-option [value]="'wholesale'">Wholesale</md-option>
-          </md-select>
+          <mat-form-field>
+              <mat-select placeholder="Contact Reason" name="reason" [(ngModel)]="reason">
+                <mat-option [value]="'question'">Question</mat-option>
+                <mat-option [value]="'comment'">Comment</mat-option>
+                <mat-option [value]="'complaint'">Complaint</mat-option>
+                <mat-option [value]="'wholesale'">Wholesale</mat-option>
+              </mat-select>
+          </mat-form-field>
         </div>
       </div>
       <div class="row">
