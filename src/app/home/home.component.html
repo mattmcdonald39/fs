@@ -18,7 +18,7 @@
         <h5 class="header col s12 white-text">Get it now on</h5>
       </div>
       <div class="row center">
-        <a class="outline-button amazon" target="blank" href="https://www.amazon.com/The-Face-Shade-FS-01-Blue/dp/B00K4QJY7U">
+        <a class="outline-button amazon" (click)="goToAmazon('Amazon - Hero')">
           <img src="assets/img/Amazon-logo.png" style="height: 75px" alt="">       
         </a>
       </div>
@@ -99,7 +99,9 @@
       <div class="col s12 center">
         <h3><i class="mdi-content-send brown-text"></i></h3>
         <h4>Contact Us</h4>
-        <p class="left-align light">We are looking to expand and partner with sellers to offer our product in their brick and mortar or online stores. Please email sunbuddyinc@yahoo.com for future business inquiries.</p>
+        <p class="center-align light">Want to sell The Face Shade™ in your store, resort or pool?. Please 
+            <a routerLink="/contact">Contact</a> 
+          us for future business inquiries.</p>
       </div>
     </div>
   </div>
@@ -113,9 +115,9 @@
           Why regret your next vacation without The Face Shade™?
           <br/>
           Don't wait, get yours today!</h5>
-        <a href="https://www.amazon.com/The-Face-Shade-FS-01-Blue/dp/B00K4QJY7U" target="blank" id="download-button" class="btn-large waves-effect waves-light amber darken-4">Shop</a>
+        <a (click)="goToAmazon('Amazon - Shop')" target="blank" class="btn-large waves-effect waves-light amber darken-4">Shop</a>
       </div>
     </div>
   </div>
-  <div class="parallax"><img src="assets/img/beach2.jpeg" alt="Unsplashed background img 3"></div>
+  <div class="parallax"><img src="assets/img/beach2.jpg" alt="Unsplashed background img 3"></div>
 </div>
